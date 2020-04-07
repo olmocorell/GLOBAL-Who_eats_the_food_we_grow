@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 #reading data
-df = pd.read_csv("input/FAO.csv",encoding='cp1252')
+df = pd.read_csv("../input/FAO.csv",encoding='cp1252')
 
 #rename year`s columns 
 columnas = df.columns[10:]
@@ -16,4 +16,4 @@ df = df.rename(columns=nombres)
 df = df.drop_duplicates()
 
 #export json to MongoDB
-df.to_json("data")
+df.to_json("../input/data", orient="records")
