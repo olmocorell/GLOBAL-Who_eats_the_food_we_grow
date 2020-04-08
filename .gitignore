@@ -1,2 +1,4 @@
 .DS_Store
 .ipynb_checkpoints/
+src/cleandata.ipynb
+src/queries.ipynb
