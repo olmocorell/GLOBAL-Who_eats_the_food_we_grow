@@ -1,5 +1,8 @@
 import src.getinfo as get
 from flask import Flask, request
+import os
+import json
+
 app = Flask(__name__)
 
 
@@ -28,8 +31,4 @@ def allInfo(country,year,product):
 
 
 
-
-
-
-
-app.run("0.0.0.0", os.getenv("PORT"), debug=True)
+app.run("0.0.0.0", "5000", debug=True)
