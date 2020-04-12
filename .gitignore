@@ -4,3 +4,4 @@ src/cleandata.ipynb
 src/queries.ipynb
 src/__pycache__/
 input/portadapi.jpg
+src/getinfo.py
