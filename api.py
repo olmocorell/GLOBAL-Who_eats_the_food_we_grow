@@ -17,17 +17,21 @@ def load_data():
 data = load_data()
 
 #select box for choose country
-area = "Area"
-option = st.selectbox(
+param_area = "Area"
+area = st.selectbox(
     'Choose an area to visualize data',
-     clean.choice(area))
-'You selected: ', option
+     clean.choice(param_area))
+'You selected: ', area
 
 #select box for choose item
-item = "Item"
-option2 = st.selectbox(
+param_item = "Item"
+item = st.selectbox(
     'Select the product to see the production evolution',
-    clean.choice(item)
+    clean.choice(param_item)
 )
-'You selected: ', option2
+'You selected: ', item
 
+datagraf = clean.grafico(area,item)
+
+st.line_chart(datagraf)
+st.bar_chart(datagraf)
