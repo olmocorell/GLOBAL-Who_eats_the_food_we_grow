@@ -1,3 +1,5 @@
+mkdir -p ~/.streamlit/
+
 echo "\
 [general]\n\
 email = \"agalvezcorell@gmail.com\"\n\
