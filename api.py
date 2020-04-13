@@ -34,7 +34,15 @@ item = st.selectbox(
 )
 'You selected: ', item
 
-datagraf = clean.grafico(area,item)
 
+datagraf = clean.grafico(area,item)
+"""
+In the first graph, you can see the evolution of product production in the country you have selected.
+"""
 st.line_chart(datagraf)
+"""
+In the second graph, you can see the exact amount in k tons of that product (feed and food).
+You can pass the mouse over it and see the value.
+If you are really interested in this data, you can interact with the graph to see it bigger or smaller or even download it.
+"""
 st.bar_chart(datagraf)
