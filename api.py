@@ -46,3 +46,4 @@ You can pass the mouse over it and see the value.
 If you are really interested in this data, you can interact with the graph to see it bigger or smaller or even download it.
 """
 st.bar_chart(datagraf)
+

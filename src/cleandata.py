@@ -70,6 +70,6 @@ def grafico(area,item):
     years = [str(a) for a in years]
     diccionario = {"Feed": feed, "Food":food,"Year":years}
     data = pd.DataFrame(diccionario)
-    data = data.rename(columns={"Year":"index"}).set_index("index")
+    data = data.set_index("Year")
    
     return data
