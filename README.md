@@ -9,4 +9,8 @@ You can see it in [Heroku](https://foodwegrow.herokuapp.com/) using this link:
 https://foodwegrow.herokuapp.com/
 ```
 
+<p align="center">
+  <img width="700" height="450" src="https://github.com/agalvezcorell/GLOBAL-Who_eats_the_food_we_grow/blob/master/input/example.png">
+</p>
+
 Enjoy it!
