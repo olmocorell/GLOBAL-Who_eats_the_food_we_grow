@@ -17,23 +17,28 @@ def loadCleanData():
 
 
 def choice(param):
+    """
+    generates a simple dataframe with the unique data of 
+    the area and item columns for the selectbox
+    """
     data = loadCleanData()
     dfarea = {"Area":data.Area.unique()}
     data1 = pd.DataFrame(dfarea)
     dfitem = {"Item":data.Item.unique()}
     data2 = pd.DataFrame(dfitem)
-
+    data3 = pd.DataFrame(list(range(1961,2014)))
+    data3["Years"] = pd.DataFrame(list(range(1961,2014)))
     if param == "Item":
         return data2["Item"]
+    elif param == "Year":
+        return data3["Years"]
     else:
         return data1["Area"]
 
 def grafico(area,item):
-
     """
     data filtering according to the user's choice
     """
-
     years = list(range(1980,2014))
     data = loadCleanData()
     data = data.fillna(0)
@@ -73,3 +78,13 @@ def grafico(area,item):
     data = data.set_index("Year")
    
     return data
+
+
+def paraMapa(item,year,param):
+    param = str(param)
+    data = loadCleanData()
+    data = data[(data["Item"] == f"{item}") & (data["Element"] == f"{param}")]
+    columnas = ["Area","Element",f"{year}"]
+    return data[columnas]
+
+

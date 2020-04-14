@@ -1,6 +1,7 @@
 import src.cleandata as clean
 import streamlit as st
 from PIL import Image
+import plotly.graph_objs as go
 
 st.markdown("<h1 style='text-align: center; color: black;'>Who eats the food we grow?</h1>", unsafe_allow_html=True)
 
@@ -47,3 +48,61 @@ If you are really interested in this data, you can interact with the graph to se
 """
 st.bar_chart(datagraf)
 
+f"""
+Choose a year, to see its worldwide production (Feed/Food) on a map. 
+You have selected "{item}". To change it, go up.
+"""
+
+param_year = "Year"
+year = st.selectbox(
+    'Select year',
+     clean.choice(param_year))
+'You selected:', year
+
+feed = "Feed"
+food = "Food"
+
+datamapafeed = clean.paraMapa(item,year,feed)
+datamapafood = clean.paraMapa(item,year,food)
+
+
+
+mapafeed = go.Figure(data=go.Choropleth(
+    locations = datamapafeed['Area'],
+    locationmode = 'country names',
+    z = datamapafeed[f"{year}"],
+    colorscale = 'Blues',
+    marker_line_color = 'black',
+    marker_line_width = 0.5,
+))
+mapafeed.update_layout(
+    title_text = f"Feed - {item} in {year}",
+    title_x = 0.5,
+    margin=dict(l=20, r=20, t=30, b=5),
+    geo=dict(
+        showframe = False,
+        showcoastlines = False,
+        projection_type = 'equirectangular'
+    )
+)
+mapafeed
+
+mapafood = go.Figure(data=go.Choropleth(
+    locations = datamapafood['Area'],
+    locationmode = 'country names',
+    z = datamapafood[f"{year}"],
+    colorscale = 'Oranges',
+    marker_line_color = 'black',
+    marker_line_width = 0.5,
+))
+mapafood.update_layout(
+    title_text = f"Food - {item} in {year}",
+    title_x = 0.5,
+    margin=dict(l=20, r=20, t=30, b=20),
+    geo=dict(
+        showframe = False,
+        showcoastlines = False,
+        projection_type = 'equirectangular'
+    )
+)
+mapafood
