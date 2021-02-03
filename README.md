@@ -2,7 +2,9 @@
 # Who eats the food we grow?
 In this visualization project, I have created an API that allows us to see the data of the production of different foods in the countries and if they are used for food or feed. I have extracted the data from [this Kaggle dataset.](https://www.kaggle.com/dorbicycle/world-foodfeed-production)
 
-I used the Streamlit library
+### Project motivation 🙃
+
+I wanted to learn how to use the streamlit library to make simple APIs that include some basic data visualisation.
 
 You can see it in [Heroku](https://foodwegrow.herokuapp.com/) using this link:
 ```
